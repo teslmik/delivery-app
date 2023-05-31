@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout {
+  min-height: 100vh;
+}
+
+.content-layout {
+  flex: 1 1 auto;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.vert-bar {
+  width: 1px;
+  height: 30px;
+  background-color: #2b2727;
+}
+
+.menu-title {
+  text-align: center;
+}
+
+.ant-card {
+  .ant-card-body {
+    padding: 12px;
+  }
+}
+
+.ant-card-cover.ant-card-cover {
+  margin: 0;
+}
