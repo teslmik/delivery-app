@@ -4,10 +4,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import shops from './shops/slice';
 import products from './products/slice';
 import cart from './cart/slice';
+import orders from './orders/slice';
 
 
 const store = configureStore({
-  reducer: { shops, products, cart },
+  reducer: { shops, products, cart, orders },
 });
 
 type AppDispatch = typeof store.dispatch;

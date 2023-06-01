@@ -1,4 +1,4 @@
-import { Space, Typography } from 'antd';
+import { Empty, Space, Typography } from 'antd';
 import { useSelector } from 'react-redux';
 
 import { RootState } from '../redux/store';
@@ -11,9 +11,11 @@ const CartItems: React.FC = () => {
     <div className="cart-content">
       <div className="cart-wrapper">
         <Space className="cart-items" direction="vertical">
-          {items.map(item => (
-            <CartItem key={item._id} item={item} />
-          ))}
+          {items.length > 0 ? (
+            items.map((item) => <CartItem key={item._id} item={item} />)
+          ) : (
+              <Empty description='Cart is empty' />
+          )}
         </Space>
       </div>
       <Typography.Title level={3} className="cart-total">

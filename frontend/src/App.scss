@@ -92,3 +92,26 @@ main {
     flex: 1 1 auto;
   }
 }
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+
+  .history-form {
+    margin: 0 auto;
+    width: 500px;
+  }
+}
+
+.empty-products {
+  position: absolute;
+  right: calc(50% - 200px);
+  top: calc(50% - 100px);
+}
+
+.spin-products {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
