@@ -1,9 +1,15 @@
-import { Button, Divider } from 'antd';
+import { Badge, Button, Divider } from 'antd';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { RootState } from '../redux/store';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
-  
+  const { items } = useSelector((state: RootState) => state.cart);
+
+  const coutnSumm = items.reduce((summ, item) => summ + Number(item.count), 0);
+  console.log('coutnSumm: ', coutnSumm);
+
   const handleLink = (url = '') => {
     navigate(url);
   };
@@ -14,9 +20,11 @@ const Header: React.FC = () => {
         Shop
       </Button>
       <Divider type="vertical" />
-      <Button type="text" onClick={() => handleLink('cart')}>
-        Shoping Cart
-      </Button>
+      <Badge size="small" count={coutnSumm}>
+        <Button type="text" onClick={() => handleLink('cart')}>
+          Shoping Cart
+        </Button>
+      </Badge>
       <Divider type="vertical" />
       <Button type="text" onClick={() => handleLink('history')}>
         History
