@@ -22,7 +22,7 @@ const columns = [
     title: 'Total price, ₴',
     dataIndex: 'total',
     key: 'total',
-  }
+  },
 ];
 
 const OrderProductsTable: React.FC<{ products: ResponseProductsDto[] }> = ({

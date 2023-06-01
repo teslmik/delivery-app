@@ -12,7 +12,7 @@ import 'antd/dist/reset.css';
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />} >
+      <Route path="/" element={<MainLayout />}>
         <Route path="" element={<HomePage />} />
         <Route path="cart" element={<CartPage />} />
         <Route path="history" element={<HistoryPage />} />

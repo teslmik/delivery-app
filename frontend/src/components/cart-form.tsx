@@ -1,6 +1,6 @@
-import { Button, Form, Input, Space } from "antd";
+import { Button, Form, Input, Space } from 'antd';
 
-import { FormSubmitButton } from "./components";
+import { FormSubmitButton } from './components';
 
 const CartForm: React.FC = () => {
   const [form] = Form.useForm();
@@ -23,11 +23,7 @@ const CartForm: React.FC = () => {
         <Form.Item name="phone" label="Phone" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
-        <Form.Item
-          name="address"
-          label="Address"
-          rules={[{ required: true }]}
-        >
+        <Form.Item name="address" label="Address" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
       </div>
@@ -38,7 +34,7 @@ const CartForm: React.FC = () => {
         </Space>
       </Form.Item>
     </Form>
-  )
-}
+  );
+};
 
 export { CartForm };

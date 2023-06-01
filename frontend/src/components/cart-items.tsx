@@ -14,7 +14,7 @@ const CartItems: React.FC = () => {
           {items.length > 0 ? (
             items.map((item) => <CartItem key={item._id} item={item} />)
           ) : (
-              <Empty description='Cart is empty' />
+            <Empty description="Cart is empty" />
           )}
         </Space>
       </div>

@@ -6,7 +6,7 @@ import { ResponseProductsDto } from '../types/types';
 
 type Properties = {
   product: ResponseProductsDto;
-}
+};
 
 const APP_URL = import.meta.env.VITE_APP_IMAGE_PATH;
 
@@ -14,20 +14,15 @@ const ProductCard: React.FC<Properties> = ({ product }) => {
   const dispatch = useAppDispatch();
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product))
-  }
+    dispatch(addToCart(product));
+  };
 
   return (
     <Col span={8}>
       <Card
         hoverable
         style={{ width: 240 }}
-        cover={
-          <img
-            alt="example"
-            src={`${APP_URL}${product.imageUrl}`}
-          />
-        }
+        cover={<img alt="example" src={`${APP_URL}${product.imageUrl}`} />}
       >
         <Card.Meta title={product.name} description={`${product.price} ₴`} />
         <Divider />

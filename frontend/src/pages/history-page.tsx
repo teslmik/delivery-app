@@ -23,22 +23,19 @@ const HistoryPage = () => {
           <Space className="cart-items" direction="vertical">
             {orders.length > 0 ? (
               <Collapse defaultActiveKey={[orders.length]}>
-                {orders.map((order, index) => (
-                  <Collapse.Panel
-                    header={
-                      <CollapseHeader
-                        index={index}
-                        order={order}
-                      />
-                    }
-                    key={index + 1}
-                  >
-                    <OrderProductsTable products={order.products} />
-                  </Collapse.Panel>
-                )).reverse()}
+                {orders
+                  .map((order, index) => (
+                    <Collapse.Panel
+                      header={<CollapseHeader index={index} order={order} />}
+                      key={index + 1}
+                    >
+                      <OrderProductsTable products={order.products} />
+                    </Collapse.Panel>
+                  ))
+                  .reverse()}
               </Collapse>
             ) : (
-              <Empty description='Orders not found' />
+              <Empty description="Orders not found" />
             )}
           </Space>
         </div>
