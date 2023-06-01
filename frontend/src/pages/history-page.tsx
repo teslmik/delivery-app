@@ -27,7 +27,6 @@ const HistoryPage = () => {
                   <Collapse.Panel
                     header={
                       <CollapseHeader
-                        total={orders.length}
                         index={index}
                         order={order}
                       />

@@ -2,12 +2,11 @@ import React from 'react'
 import { OrderResponseDto } from '../types/order-response-dto.type'
 
 type Propertiws = {
-  total: number;
   order: OrderResponseDto;
   index: number;
 }
 
-const CollapseHeader: React.FC<Propertiws> = ({total, order, index}) => {
+const CollapseHeader: React.FC<Propertiws> = ({ order, index}) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
       <div>
