@@ -34,7 +34,7 @@ const CartForm: React.FC = () => {
       <Form.Item>
         <Space>
           <FormSubmitButton form={form} />
-          <Button htmlType="reset">Reset</Button>
+          <Button htmlType="reset">Reset form</Button>
         </Space>
       </Form.Item>
     </Form>

@@ -17,6 +17,10 @@ const Header: React.FC = () => {
       <Button type="text" onClick={() => handleLink('cart')}>
         Shoping Cart
       </Button>
+      <Divider type="vertical" />
+      <Button type="text" onClick={() => handleLink('history')}>
+        History
+      </Button>
     </div>
   );
 };
