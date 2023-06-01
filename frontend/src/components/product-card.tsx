@@ -29,7 +29,7 @@ const ProductCard: React.FC<Properties> = ({ product }) => {
           />
         }
       >
-        <Card.Meta title={product.name} />
+        <Card.Meta title={product.name} description={`${product.price} ₴`} />
         <Divider />
         <Button type="primary" block onClick={addToCartHandler}>
           Add to cart

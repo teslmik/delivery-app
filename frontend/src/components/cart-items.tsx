@@ -1,11 +1,12 @@
 import { Space, Typography } from 'antd';
 import { useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
 
+import { RootState } from '../redux/store';
 import { CartItem } from './components';
 
 const CartItems: React.FC = () => {
   const { items, totalPrice } = useSelector((state: RootState) => state.cart);
+
   return (
     <div className="cart-content">
       <div className="cart-wrapper">

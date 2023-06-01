@@ -8,6 +8,11 @@ type CartSliseType = {
   totalPrice: number,
 }
 
+type countType = {
+  item: ResponseProductsDto;
+  value: number | null;
+}
+
 const initialState: CartSliseType = {
   items: [],
   totalPrice: 0,
@@ -26,27 +31,22 @@ export const cartSlice = createSlice({
       }
       state.totalPrice = calcTotalPrice(state.items);
     },
-    increment(state, action: PayloadAction<string>) {
-      const findItem = state.items.find(obj => obj._id === action.payload);
-      findItem && findItem.count++;
-      state.totalPrice = calcTotalPrice(state.items);
-    },
-    decrement(state, action: PayloadAction<string>) {
-      const findItem = state.items.find(obj => obj._id === action.payload);
-      findItem && findItem.count--;
+    changeCoutn(state, action: PayloadAction<countType>) {
+      const findItem = state.items.find(obj => obj._id === action.payload.item._id);
+      
+      if (findItem) {
+        findItem.count = action.payload.value as number;
+      }
+
       state.totalPrice = calcTotalPrice(state.items);
     },
     removeFromCart(state, action: PayloadAction<string>) {
       state.items = state.items.filter(obj => obj._id !== action.payload);
       state.totalPrice = calcTotalPrice(state.items);
-    },
-    clearCart(state) {
-      state.items = [];
-      state.totalPrice = 0;
     }
   },
 });
 
-export const { addToCart, increment, decrement, removeFromCart, clearCart } = cartSlice.actions;
+export const { addToCart, changeCoutn, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
