@@ -11,7 +11,7 @@ const CollapseHeader: React.FC<Propertiws> = ({total, order, index}) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
       <div>
-        {`Order #${total - index} | ${new Date(
+        {`Order #${index + 1} | ${new Date(
           order.createdAt,
         ).toLocaleString('en-US', {
           year: 'numeric',
