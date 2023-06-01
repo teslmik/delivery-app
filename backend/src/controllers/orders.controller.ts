@@ -16,7 +16,7 @@ class OrdersController {
   async getOrdersByParams(req: Request, res: Response, next: NextFunction) {
     try {
       const { email, phone } = req.query;
-      console.log('req.query: ', req.query);
+      
       if (!email || !phone) {
         throw new Error;
       }
