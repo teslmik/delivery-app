@@ -11,24 +11,29 @@ const Sidebar: React.FC<{ colorBgContainer: string }> = ({
 }) => {
   const dispatch = useAppDispatch();
   const { shops } = useSelector((state: RootState) => state.shops);
+  const { items: cart } = useSelector((state: RootState) => state.cart);
 
   const itemsArr = shops.map((shop) => shop.name);
   const items: MenuProps['items'] = itemsArr.map((name, index) => {
+    const isDisabled =
+      cart.length > 0 && cart.every((item) => item.shopId !== shops[index]._id);
+
     return {
       key: String(index + 1),
       label: name,
+      disabled: isDisabled,
     };
   });
 
   const menuItemsHandler: MenuProps['onClick'] = (event) => {
-    dispatch(fetchProducts({ shopId: shops[+event.key - 1]._id }))
-  }
+    dispatch(fetchProducts({ shopId: shops[+event.key - 1]._id }));
+  };
 
   useEffect(() => {
     dispatch(fetchShops())
       .unwrap()
       .then((res) => dispatch(fetchProducts({ shopId: res[0]._id })));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -37,7 +42,9 @@ const Sidebar: React.FC<{ colorBgContainer: string }> = ({
       width={200}
       title="Shops"
     >
-      <Typography.Title level={5} className='menu-title' >Shops</Typography.Title>
+      <Typography.Title level={5} className="menu-title">
+        Shops
+      </Typography.Title>
       <Menu
         mode="inline"
         defaultSelectedKeys={['1']}

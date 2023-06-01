@@ -8,7 +8,6 @@ const Header: React.FC = () => {
   const { items } = useSelector((state: RootState) => state.cart);
 
   const coutnSumm = items.reduce((summ, item) => summ + Number(item.count), 0);
-  console.log('coutnSumm: ', coutnSumm);
 
   const handleLink = (url = '') => {
     navigate(url);
