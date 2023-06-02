@@ -14,7 +14,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="header-btn">
+    <header className="header-btn">
       <Button type="text" onClick={() => handleLink()}>
         Shop
       </Button>
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
       <Button type="text" onClick={() => handleLink('history')}>
         History
       </Button>
-    </div>
+    </header>
   );
 };
 
